@@ -5,14 +5,43 @@
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(197, 167, 189);
+    background-color: rgb(221, 194, 214);
     color: black;
 }
 .logo{
     width: 100px;
     height: 50px;
 }
+header{
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    background-color: rgb(185, 133, 171);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    height: 90px;
+}
+header ul{
+    position: absolute;
+    top: 0;
+    right: 15%;
+    list-style: none;
+    display: flex;
+}
 .redes{
     width: 35px;
-    height: 34px;
+    height: 35px;
+}
+header nav a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+    font-size: 1.5em;
+}
+header nav a:hover{
+    background-color: rgb(184, 118, 164);
+    border-radius: 50px;
 }
