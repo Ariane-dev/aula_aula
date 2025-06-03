@@ -8,20 +8,27 @@ body{
     background-color: #cdd4ce;
     color: #333;
 }
+main{
+    height: 130vh;
+    display: flex;
+}
 
 .logo{
     width: 100px;
     height: 50px;
     position: relative;
-    left: 70%;
-    top: 10px;
+    left: 67%;
+    top: 0px
 }
 .redes{
-    position: relative;
-    left: 250%;
-    top: 10px;;
+    display: flex;
     justify-content: space-between;
     width: 100px;
+    height: 50px;
+    position: relative;
+    left: 650%;
+    top: 10px;
+    padding: 10px;
 }
 header{
     position: fixed;
@@ -30,7 +37,7 @@ header{
     justify-content: space-around;
     background-color:#5d8866;
     color: white;
-    padding: 10px 0;
+    padding: 50px 0;
     text-align: center;
     width: 100%;
 
@@ -54,4 +61,8 @@ nav{
     position: absolute;
     left: 150px;
     top: 50px;
+}
+nav a:hover{
+    background-color: rgb(144, 170, 152);
+    border-radius: 20px;
 }
