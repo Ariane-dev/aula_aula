@@ -55,10 +55,10 @@ main{
 }
 .modal{
     position: fixed;
-    left: 30%;
-    top: 200px;
-    width: 60%;
-    background-color: rgb(157, 107, 161);
+    left: 50%;
+    top: 100px;
+    width: 50%;
+    background-color: rgba(157, 107, 161, 0.863);
     color: white;
     padding: 20px;
     z-index: 5;
