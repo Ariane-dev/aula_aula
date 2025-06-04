@@ -20,7 +20,7 @@
   
   
   .linha-menu-center::before{
-      border-color: transparent #2f4bff #2f4bff transparent;
+      border-color: transparent rgb(100, 75, 97)rgb(100, 75, 97) transparent;
       border-style: solid;
       border-width: 5px;
       content: '';
@@ -63,7 +63,7 @@
       position: absolute;
       top: 60px;
       left: 0;
-      background-color: #64a5ef4f;
+      background-color: rgba(185, 133, 171, 0.082);
       backdrop-filter: blur(10px);
       transition: all 0.3s ease;
       opacity: 1;
@@ -96,4 +96,5 @@
     height: 5px;
     background-color: rgb(100, 75, 97);
     margin: 5px 0;
-}
+  }
+  }
