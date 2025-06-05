@@ -8,21 +8,24 @@ body{
     background-color: rgb(221, 194, 214);
     color: black;
 }
-.logo{
+.logo-header{
     width: 100px;
     height: 50px;
+    position: absolute;
+    left: 10px;
 }
 header{
     position: fixed;
     display: flex;
     align-items: baseline;
-    justify-content: space-around;
+    justify-content: flex-end;
     background-color: rgb(185, 133, 171);
     color: white;
     padding: 10px 0;
-    text-align: center;
+    text-align: right;
     width: 100%;
     z-index: 4;
+    height: 80px;
 
 }
 header ul{
@@ -31,6 +34,7 @@ header ul{
     right: 18%;
     list-style: none;
     display: flex;
+    
 }
 .redes{
     width: 35px;
@@ -43,6 +47,7 @@ header nav a {
     padding: 0 5px;
     transition: background-color 0.3s;
     font-size: 1.2em;
+    margin-top: 50px;
     
 }
 header nav a:hover{
@@ -79,3 +84,14 @@ main{
     cursor: pointer;
     z-index: 6;
 }
+.navbar-mobile{
+    display:none;
+  }
+  nav{
+   display: flex;
+   justify-content: right;
+   padding: 0 20px;
+   margin-top: -10px;
+   font-size: 1.2rem;
+   margin-right: 200px ;
+  }
