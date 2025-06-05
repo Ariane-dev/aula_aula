@@ -1,0 +1,9 @@
+:root{
+    --cor-textp-primaria: #000000;
+    --cor-secundaria: #ffffff;
+    --cor-fundo-primaria: rgb(185, 133, 171);
+    --cor-fundo-secundario:rgb(221, 194, 214);
+    --fonte-principal: 'Arial', sans-serif;
+    --espacamento: 1rem;
+    --tamanho-fonte: 16px
+}

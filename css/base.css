@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--fonte-principal);
+    background-color: rgb(221, 194, 214);
+    color: black;
+    cursor: url("cursor/cursor-normal.svg"), auto;
+}
+main{
+   display: block;
+   max-width: 1200px;
+   margin: 2rem auto;
+}
+.section-title{
+    text-align: center;
+    padding: 4rem 0;
+}
+.modal{
+    position: fixed;
+    left: 50%;
+    top: 100px;
+    width: 50%;
+    background-color: rgba(157, 107, 161, 0.863);
+    color: white;
+    padding: 20px;
+    z-index: 5;
+}
