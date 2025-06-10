@@ -10,18 +10,19 @@
     justify-content: center;
     gap: 2rem
 }
-.testemunho-card{
+.testemunho-cards{
     flex-basis: 400px;
     padding: 1.5rem;
-    border-left: 5px solid white;
-    margin-bottom: 1rem;
+    border-left: 5px solid rgb(75, 69, 69);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
-.testemunho-card blockquote{
+.testemunho-cards blockquote{
     font-style:italic;
     font-size: 1.1rem;
     margin-bottom: 2rem;
 }
-.testemunho-card cite{
+.testemunho-cards cite{
     font-weight: bold;
-    color: rgb(255, 255, 255);
+    color: rgb(34, 34, 34);
 }
