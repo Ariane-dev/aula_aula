@@ -6,9 +6,11 @@
     padding: 1rem 1rem;
     border-left: #e77cbe solid 3px;
     border-bottom: #e77cbe solid 3px;
-    border-right: transparent;
+    border-right:  #e77cbe solid 3px;
+    border-top:  #e77cbe solid 3px;
     border-radius: 8px;
     margin-bottom: 2rem;
+    box-shadow: 10px 10px 10px  rgb(207, 151, 198);
 }
 .hero-image{
     width:100%;
