@@ -21,6 +21,8 @@ header ul{
     display: flex;
 }
 .redes{
+    position: relative;
+    right: 30px;
     width: 35px;
     height: 30px;
     margin: auto;
@@ -31,21 +33,38 @@ header nav a {
     padding: 0 5px;
     transition: background-color 0.3s;
     font-size: 1.2em;
+    font-weight: bold;
     
 }
 header nav a:hover{
-    background-color: rgb(184, 118, 164);
+    color: rgb(77, 75, 75);
     border-radius: 50px;
+    border-bottom: 4px solid #a15e88;
     
 }
 .logo{
     width: 100px;
     height: 50px;
     animation: fadeIn 1s ease-in forwards;
+    transition: opacity 0.6s ease-in-out;
     
 }
 .logo:hover{
+    animation: pulse 2s infinite;
+    content: url(cursor/frog-leap.svg);
+}
+
+.logo2{
+    position: relative;
+    right: 255px;
+    width: 100px;
+    height: 50px;
+    animation: fadeIn 1s ease-in forwards;
+    
+}
+.logo2:hover{
     animation: pulse 1s infinite;
+     transform: scale(1.05);
 }
 
 .menu-icon {
