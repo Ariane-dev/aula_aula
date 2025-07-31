@@ -46,12 +46,8 @@ header nav a:hover{
 }
 .logo:hover{
     animation: pulse 1s infinite;
-}
-.logo-sapo{
-    width: 100px;
-    height: 50px;
-    animation: fadeIn 1s ease-in forwards;
-
+    content: url(img/forwa);
+    content: url('img/frog-leap.svg');
 }
 
 .menu-icon {
