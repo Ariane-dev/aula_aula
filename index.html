@@ -38,59 +38,149 @@
         </ul>
     </Header>
     <main>
-        <section class="servicos">
-            <div class="caixa">
-                <div class="card">
-                    <div class="card-img-container" >
-                        <figure>
-                        <img src="img/card1.png" alt="Imagem do Card1">
-                            <figcaption class="figcaption-servico">
-                            <p class="titulo-interno" >Evita <a href="servicos.html" class="destaque">infiltrações</a> em áreas expostas ao tempo, 
-                                        aumentando a durabilidade da estrutura.</p>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    
-                </div>
-                    <p class="titulo-externo">Este é o subtítulo do card, fica embaixo do card.</p>
-            </div>
-    
-            <div class="caixa">
-                <div class="card">
-                    <div class="card-img-container" >
-                        <figure>
-                        <img src="img/card1.png" alt="Imagem do Card1">
-                            <figcaption class="figcaption-servico">
-                            <p class="titulo-interno" >Soluções específicas para áreas com contato constante 
-                                    com água, garantindo total <a href="servicos.html" class="destaque">estanqueidade</a>.</p>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    
-                </div>
-                    <p class="titulo-externo">Este é o subtítulo do card, fica embaixo do card.</p>
-            </div>
 
-           <div class="caixa">
-                <div class="card">
-                    <div class="card-img-container" >
-                        <figure>
-                        <img src="img/card1.png" alt="Imagem do Card1">
-                            <figcaption class="figcaption-servico">
-                            <p class="titulo-interno" >Proteção contra <a href="servicos.html" class="destaque">vazamentos</a> e umidade em áreas internas 
-                                    com alto uso de água.</p>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    
-                </div>
-                    <p class="titulo-externo">Este é o subtítulo do card, fica embaixo do card.</p>
+<div class="container">
+    <div class="carrossel">
+        <!-- Clones para looping infinito -->
+        <article class="card clone">
+          <div class="card-img-container">
+            <img src="img/card1.png" alt="Logo" class="card-img">
+            <div class="card-text-bottom">
+              <h3 class="card-title">Logo</h3>
+              <p class="card-subtitle">Logo da página.</p>
             </div>
-
-        </section>
-
+          </div>
+        </article>
+        <!-- Cards originais -->
+        <article class="card">
+          <div class="card-img-container">
+            <img src="img/card1.png" alt="Sapo pulando" class="card-img">
+            <div class="card-text-bottom">
+              <h3 class="card-title">Sapo Pulando</h3>
+              <p class="card-subtitle">Veja o sapo em ação!</p>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img-container">
+            <img src="img/card1.png" alt="Sapo SVG" class="card-img">
+            <div class="card-text-bottom">
+              <h3 class="card-title">Sapo SVG</h3>
+              <p class="card-subtitle">Arte em SVG de sapo.</p>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img-container">
+            <img src="img/card1.png" alt="Card personalizado" class="card-img">
+            <div class="card-text-bottom">
+              <h3 class="card-title">Card Personalizado</h3>
+              <p class="card-subtitle">Adicione seu conteúdo aqui.</p>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img-container">
+            <img src="img/card1.png" alt="Logo" class="card-img">
+            <div class="card-text-bottom">
+              <h3 class="card-title">Logo</h3>
+              <p class="card-subtitle">Logo da página.</p>
+            </div>
+          </div>
+        </article>
+        <!-- Clone para looping infinito -->
+        <article class="card clone">
+          <div class="card-img-container">
+            <img src="img/card1.png" alt="Sapo pulando" class="card-img">
+            <div class="card-text-bottom">
+              <h3 class="card-title">Sapo Pulando</h3>
+              <p class="card-subtitle">Veja o sapo em ação!</p>
+            </div>
+          </div>
+        </article>
+    </div>
+</div>
         
   
     </main>
+
+<script>
+  const carrossel = document.querySelector('.carrossel');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+  if (carrossel) {
+    // Drag to scroll
+    carrossel.addEventListener('mousedown', (e) => {
+      isDown = true;
+      carrossel.classList.add('active');
+      startX = e.pageX - carrossel.offsetLeft;
+      scrollLeft = carrossel.scrollLeft;
+    });
+    carrossel.addEventListener('mouseleave', () => {
+      isDown = false;
+      carrossel.classList.remove('active');
+    });
+    carrossel.addEventListener('mouseup', () => {
+      isDown = false;
+      carrossel.classList.remove('active');
+    });
+    carrossel.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - carrossel.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      carrossel.scrollLeft = scrollLeft - walk;
+    });
+
+    // Slider automático card a card
+    function sliderCarrossel() {
+      if (!carrossel) return;
+      const cards = carrossel.querySelectorAll('.card');
+      const card = cards[0];
+      if (!card) return;
+      const cardWidth = card.offsetWidth + parseInt(getComputedStyle(carrossel).gap || 0);
+      let currentIndex = 1; // começa no primeiro card original
+      const totalCards = cards.length;
+
+      function goToCard(index, smooth = true) {
+        carrossel.scrollTo({
+          left: cardWidth * index,
+          behavior: smooth ? 'smooth' : 'auto'
+        });
+      }
+
+      // Snap centralizado ao iniciar
+      goToCard(currentIndex, false);
+
+      let sliderInterval;
+      let isJumping = false;
+      function startSlider() {
+        sliderInterval = setInterval(() => {
+          if (isJumping) return;
+          currentIndex++;
+          goToCard(currentIndex);
+          // Se chegou no clone final, volta pro card original sem animação e sem travar
+          if (currentIndex === totalCards - 1) {
+            isJumping = true;
+            goToCard(currentIndex, true);
+            setTimeout(() => {
+              currentIndex = 1;
+              goToCard(currentIndex, false);
+              isJumping = false;
+            }, 300); // tempo menor para evitar travamento
+          }
+        }, 2000);
+      }
+      function stopSlider() {
+        clearInterval(sliderInterval);
+      }
+      carrossel.addEventListener('mouseenter', stopSlider);
+      carrossel.addEventListener('mouseleave', startSlider);
+      startSlider();
+    }
+    sliderCarrossel();
+  }
+</script>
 </body>
 </html>

@@ -13,6 +13,7 @@ main{
    display: block;
    max-width: 1200px;
    margin: 2rem auto;
+   margin-top: 400px;
 }
 .section-title{
     text-align: center;
